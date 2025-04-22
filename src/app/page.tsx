@@ -16,14 +16,18 @@ export default function Home() {
             <div className="absolute inset-0 bg-[url('/images/banner2.png')] bg-cover bg-center bg-no-repeat opacity-50 z-0"></div>
           </div>{' '}
           <h1 className="z-10 self-center relative bottom-36 md:bottom-56 ">
-            <Image
-              src="/images/holdings_logo.png"
-              alt="logo"
-              width={0}
-              height={100}
-              className="w-[250px] sm:w-[400px]"
-              style={{ height: 'auto' }}
-            />
+            <h1 className="z-10 self-center relative bottom-36 md:bottom-56 ">
+              <Image
+                src="/images/holdings_logo.png"
+                alt="logo"
+                width={400}
+                height={100}
+                priority
+                quality={100}
+                className="w-[250px] sm:w-[400px]"
+                style={{ height: 'auto' }}
+              />
+            </h1>
           </h1>
           <p className="italic z-10 self-center text-center relative w-2/3 md:w-full  text-lg tracking-wide opacity-95 md:font-semibold p-1">
             We build B2C and B2B web3 products for the luxury resale market.
@@ -54,8 +58,10 @@ export default function Home() {
             <Image
               src="/images/retrovrs2.png"
               alt="logo"
-              width={0}
+              width={400}
               height={100}
+              priority
+              quality={100}
               className="w-[250px] sm:w-[400px] rounded-md"
               style={{ height: 'auto' }}
             />
