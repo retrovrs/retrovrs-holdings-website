@@ -282,6 +282,10 @@ export default function Home() {
           className={`${assistant.className} text-gray-300 tracking-wide opacity-90 text-center`}>
           &copy; 2025 Retrovrs Holdings. All rights reserved.
         </p>
+        <p
+          className={`${assistant.className} text-gray-300 tracking-wide opacity-90 text-center`}>
+          Los Angeles, CA // Paris, France
+        </p>
       </footer>
     </div>
   );
