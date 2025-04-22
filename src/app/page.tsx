@@ -14,7 +14,7 @@ const assistant = Assistant({
 
 export default function Home() {
   return (
-    <div className=" min-h-screen w-full pb-20 bg-fixed">
+    <div className=" min-h-screen w-full pb-20 bg-fixed bg-gray-950">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <header className="relative flex flex-col justify-center items-center w-full h-[600px]">
           <div className="relative w-[100vw] h-[580px] left-[calc(-50vw+50%)] right-[calc(-50vw+50%)]">
