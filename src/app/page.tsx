@@ -1,8 +1,13 @@
 import Image from 'next/image';
-import { Bebas_Neue } from 'next/font/google';
+import { Bebas_Neue, Assistant } from 'next/font/google';
 import styles from '../../styles/Button.module.css';
 
 const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const assistant = Assistant({
   weight: '400',
   subsets: ['latin'],
 });
@@ -15,28 +20,27 @@ export default function Home() {
           <div className="relative w-[100vw] h-[580px] left-[calc(-50vw+50%)] right-[calc(-50vw+50%)]">
             <div className="absolute inset-0 bg-[url('/images/banner2.png')] bg-cover bg-center bg-no-repeat opacity-50 z-0"></div>
           </div>{' '}
-          <h1 className="z-10 self-center relative bottom-36 md:bottom-56 ">
-            <h1 className="z-10 self-center relative bottom-36 md:bottom-56 ">
-              <Image
-                src="/images/holdings_logo.png"
-                alt="logo"
-                width={400}
-                height={100}
-                priority
-                quality={100}
-                className="w-[250px] sm:w-[400px]"
-                style={{ height: 'auto' }}
-              />
-            </h1>
+          <h1 className="z-10 self-center items-center justify-center flex flex-col relative bottom-52 md:bottom-56 ">
+            <Image
+              src="/images/holdings_logo.png"
+              alt="logo"
+              width={400}
+              height={100}
+              priority
+              quality={100}
+              className="w-[250px] sm:w-[400px]"
+              style={{ height: 'auto' }}
+            />
+            <p
+              className={`${assistant.className} italic z-10 self-center text-center text-indigo-200 relative w-2/3 md:w-full top-10 md:text-xl tracking-wide opacity-95  p-1`}>
+              We build B2C and B2B web3 products for the luxury resale market.
+            </p>
           </h1>
-          <p className="italic z-10 self-center text-center relative w-2/3 md:w-full  text-lg tracking-wide opacity-95 md:font-semibold p-1">
-            We build B2C and B2B web3 products for the luxury resale market.
-          </p>
         </header>
         <div className="flex flex-col text-center justify-center items-center w-full">
           <em className="block mt-4 opacity-90 uppercase tracking-widest font-light animate-bounce">
-            Now in Beta{' '}
-            <span className="inline-block transform rotate-180 ">⇪</span>
+            Now in Beta!{' '}
+            {/* <span className="inline-block transform rotate-180 ">⇪</span> */}
           </em>
 
           <h2
@@ -66,22 +70,25 @@ export default function Home() {
               style={{ height: 'auto' }}
             />
           </aside>
-          <p className="text-md mt-2 text-center tracking-wide opacity-90 w-4/5 md:w-[55%]">
+          <p
+            className={`${assistant.className} text-md md:text-lg mt-2 text-center tracking-wide opacity-90 w-4/5 md:w-[55%]`}>
             A B2C resale marketplace for luxury goods, where each item is
             authenticated before posting and has its own PBT (Physically Backed
             Token). Built on the Polygon blockchain network, with built-in
             lifetime royalties when you re-sell your item on the platform in the
             future. Now in curated beta, accepting bags and watches.
           </p>
-          <button
-            className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-indigo-950/50 relative border text-indigo-200 border-indigo-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton}`}>
-            <a href="https://retrovrs.com" target="_blank">
-              Explore the marketplace
-            </a>
-            <span className="inline-block transform rotate-90 text-2xl pb-4">
-              ⇪
-            </span>
-          </button>
+          <div className="flex gap-x-12">
+            <button
+              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-indigo-950/50 relative border text-indigo-200 border-indigo-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton}`}>
+              <a href="https://retrovrs.com" target="_blank">
+                Explore RETRO//VRS
+              </a>
+              <span className="inline-block transform rotate-90 text-2xl pb-4">
+                ⇪
+              </span>
+            </button>
+          </div>
 
           <section className="grid md:grid-cols-2 mt-36">
             <div className="flex flex-col items-center">
@@ -108,7 +115,8 @@ export default function Home() {
                   height={200}
                 />
               </div>
-              <p className="text-md tracking-wide opacity-90 w-4/5 md:w-3/5">
+              <p
+                className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
                 A B2B SaaS creating Digital Provenance Passports (DPvP) with
                 built in royalty attribution for existing marketplaces, brands,
                 and boutiques that sell pre-owned luxury assets. Each asset is
@@ -139,7 +147,8 @@ export default function Home() {
                   height={200}
                 />
               </div>
-              <p className="text-md tracking-wide opacity-90 w-4/5 md:w-3/5">
+              <p
+                className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
                 A B2C and B2B authentication service utilizing computer vision
                 AI, machine learning, deep learning, and blockchain to verify,
                 twin, and tokenize luxury assets, offering Digital Provenance
@@ -168,7 +177,8 @@ export default function Home() {
               Our team
             </span>
           </h2>
-          <p className="text-md tracking-wide opacity-90 w-4/5 md:w-3/5 text-center">
+          <p
+            className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5 text-center`}>
             With extensive backgrounds in luxury resale, Web3 technology and
             finance, our team has held key positions at prestigious companies
             such as The RealReal, Vestiaire Collective, Saks Fifth Avenue,
@@ -193,12 +203,86 @@ export default function Home() {
               Contact us
             </span>
           </h2>
-          <p className="text-md tracking-wide opacity-90 w-4/5 md:w-3/5 text-center">
-            By email:{' '}
-            <strong className="text-indigo-200">info@retrovrs.com</strong>
+          <p className=" self-center text-indigo-200 tracking-wide opacity-90  text-center flex items-center text-lg gap-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M22 6L12 13L2 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className={`${assistant.className}`}>info@retrovrs.com</span>
           </p>
+          <div className=" mt-5 text-indigo-200 hover:cursor-pointer hover:text-indigo-300 flex gap-10 ">
+            <a
+              href="https://www.linkedin.com/company/retrovrs-holdings/"
+              target="_blank">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/retro_vrs"
+              target="_blank"
+              className="text-indigo-200 hover:text-indigo-300 transition-colors">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
         </section>
       </main>
+      <footer className="flex flex-col items-center justify-center w-full mt-32">
+        <p
+          className={`${assistant.className} text-gray-300 tracking-wide opacity-90 text-center`}>
+          &copy; 2025 Retrovrs Holdings. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
