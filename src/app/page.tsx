@@ -59,6 +59,7 @@ function Header() {
             quality={100}
             className="w-[250px] sm:w-[400px]"
             style={{ height: 'auto' }}
+            unoptimized
           />
         </FadeInElement>
         <FadeInElement delay={800}>
