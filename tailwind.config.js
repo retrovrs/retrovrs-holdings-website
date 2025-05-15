@@ -55,9 +55,9 @@ module.exports = {
           '100%': { opacity: '100%' },
         },
         shadowChange: {
-          '0%': { boxShadow: '0 0 30px rgba(37,99,235, 1)' },
-          '50%': { boxShadow: '0 0 30px rgba(37,99,235, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(37,99,235, 1)' },
+          '0%': { boxShadow: '0 0 30px rgba(217, 70, 239, 1)' },
+          '50%': { boxShadow: '0 0 30px rgba(217, 70, 239, 0.3)' },
+          '100%': { boxShadow: '0 0 30px rgba(217, 70, 239, 1)' },
         },
         violetGlow: {
           '0%': { boxShadow: '0 0 30px rgba(124, 58, 237,0.3)' },
@@ -73,6 +73,10 @@ module.exports = {
           '50%': { backgroundColor: 'rgba(99,53,15, 0.2)' },
           '100%': { backgroundColor: 'rgba(99,53,15, 0.5)' },
         },
+        pageLoadFade: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         'fade-in': 'fade-in-down 0.5s ease-in',
@@ -83,6 +87,7 @@ module.exports = {
         oneSecond: 'violetGlow 1s infinite',
         colorFade: 'colorFade 2s ease-in-out forwards',
         buttonFlash: 'orangeButton 3s ease-in-out infinite',
+        pageLoad: 'pageLoadFade 0.4s ease-in forwards',
       },
       boxShadow: {
         glow: '0 0 10px rgba(37,99,235,0.3), 0 0 10px rgba(37,99,235,0.3), 0 0 10px rgba(37,99,235,0.3), 0 0 10px rgba(37,99,235,0.3)',

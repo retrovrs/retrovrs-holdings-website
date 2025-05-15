@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import { Bebas_Neue, Assistant } from 'next/font/google';
 import styles from '../../styles/Button.module.css';
+import { useEffect, useState, ReactNode } from 'react';
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -12,33 +15,70 @@ const assistant = Assistant({
   subsets: ['latin'],
 });
 
+interface FadeInElementProps {
+  children: ReactNode;
+  delay?: number;
+}
+
+function FadeInElement({ children, delay = 0 }: FadeInElementProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <div
+      className={`transition-opacity duration-400 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}>
+      {children}
+    </div>
+  );
+}
+
+function Header() {
+  return (
+    <header className="relative flex flex-col justify-center items-center w-full h-[600px] md:h-[800px]">
+      <div className="relative w-[100vw] h-[580px] md:h-[780px] left-[calc(-50vw+50%)] right-[calc(-50vw+50%)]">
+        <FadeInElement>
+          <div className="absolute inset-0 bg-[url('/images/banner2.png')] bg-cover bg-center bg-no-repeat opacity-50 z-0"></div>
+        </FadeInElement>
+      </div>
+      <h1 className="z-10 self-center items-center justify-center flex flex-col relative bottom-84 md:bottom-84">
+        <FadeInElement delay={400}>
+          <Image
+            src="/images/holdings_logo.png"
+            alt="logo"
+            width={400}
+            height={100}
+            priority
+            quality={100}
+            className="w-[250px] sm:w-[400px]"
+            style={{ height: 'auto' }}
+          />
+        </FadeInElement>
+        <FadeInElement delay={800}>
+          <p
+            className={`${assistant.className} italic z-10 self-center text-center text-white  relative md:w-2/3 px-10 text-lg md:w-full top-10 md:text-xl tracking-wide opacity-95 p-1`}>
+            We build B2C and B2B web3 products for the luxury resale market.
+          </p>
+        </FadeInElement>
+      </h1>
+    </header>
+  );
+}
+
 export default function Home() {
   return (
     <div className=" min-h-screen w-full pb-20 bg-fixed bg-gray-950">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <header className="relative flex flex-col justify-center items-center w-full h-[600px]">
-          <div className="relative w-[100vw] h-[580px] left-[calc(-50vw+50%)] right-[calc(-50vw+50%)]">
-            <div className="absolute inset-0 bg-[url('/images/banner2.png')] bg-cover bg-center bg-no-repeat opacity-50 z-0"></div>
-          </div>{' '}
-          <h1 className="z-10 self-center items-center justify-center flex flex-col relative bottom-52 md:bottom-56 ">
-            <Image
-              src="/images/holdings_logo.png"
-              alt="logo"
-              width={400}
-              height={100}
-              priority
-              quality={100}
-              className="w-[250px] sm:w-[400px]"
-              style={{ height: 'auto' }}
-            />
-            <p
-              className={`${assistant.className} italic z-10 self-center text-center text-indigo-200 relative w-2/3 md:w-full top-10 md:text-xl tracking-wide opacity-95  p-1`}>
-              We build B2C and B2B web3 products for the luxury resale market.
-            </p>
-          </h1>
-        </header>
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start animate-pageLoad">
+        <Header />
         <div className="flex flex-col text-center justify-center items-center w-full">
-          <em className="block mt-4 opacity-90 uppercase tracking-widest font-light animate-bounce">
+          <em className="block mt-4 opacity-90 uppercase tracking-widest text-fuchsia-300 font-light animate-bounce">
             Now in Beta!{' '}
             {/* <span className="inline-block transform rotate-180 ">⇪</span> */}
           </em>
@@ -48,7 +88,7 @@ export default function Home() {
             <span
               style={{
                 backgroundImage:
-                  'radial-gradient(circle at center, #6597f6, #c587ff)',
+                  'radial-gradient(circle at center, #e4eeff, #a0a8b7)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
@@ -59,13 +99,12 @@ export default function Home() {
             </span>
           </h2>
           <aside className="flex gap-4 items-center justify-center w-full mb-8">
-            <Image
-              src="/images/retrovrs2.png"
-              alt="logo"
-              width={400}
-              height={100}
-              priority
-              quality={100}
+            <video
+              src="/video/retrodemo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-[250px] sm:w-[400px] rounded-md"
               style={{ height: 'auto' }}
             />
@@ -80,7 +119,7 @@ export default function Home() {
           </p>
           <div className="flex gap-x-12">
             <button
-              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-indigo-950/50 relative border text-indigo-200 border-indigo-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton}`}>
+              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-200 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
               <a href="https://retrovrs.com" target="_blank">
                 Explore RETRO//VRS
               </a>
@@ -98,7 +137,7 @@ export default function Home() {
                   <span
                     style={{
                       backgroundImage:
-                        'radial-gradient(circle at center, #6597f6, #c587ff)',
+                        'radial-gradient(circle at center, #e4eeff, #a0a8b7)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                       color: 'transparent',
@@ -130,7 +169,7 @@ export default function Home() {
                   <span
                     style={{
                       backgroundImage:
-                        'radial-gradient(circle at center, #6597f6, #c587ff)',
+                        'radial-gradient(circle at center, #e4eeff, #a0a8b7)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                       color: 'transparent',
@@ -167,7 +206,7 @@ export default function Home() {
             <span
               style={{
                 backgroundImage:
-                  'radial-gradient(circle at center, #6597f6, #c587ff)',
+                  'radial-gradient(circle at center, #e4eeff, #a0a8b7)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
@@ -186,6 +225,17 @@ export default function Home() {
             institutions like HEC Paris, ESSEC, and Alyra Blockchain & AI
             School.
           </p>
+          <div className="flex gap-x-12">
+            <button
+              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-200 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
+              <a href="https://company.retrovrs.com/team" target="_blank">
+                Meet the team
+              </a>
+              <span className="inline-block transform rotate-90 text-2xl pb-4">
+                ⇪
+              </span>
+            </button>
+          </div>
         </section>
         <section className="flex flex-col items-center justify-center w-full mt-20">
           <h2
@@ -193,7 +243,7 @@ export default function Home() {
             <span
               style={{
                 backgroundImage:
-                  'radial-gradient(circle at center, #6597f6, #c587ff)',
+                  'radial-gradient(circle at center, #e4eeff, #a0a8b7)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
@@ -204,7 +254,7 @@ export default function Home() {
             </span>
           </h2>
           <p className=" self-center text-indigo-200 tracking-wide opacity-90  text-center flex items-center text-lg gap-2">
-            <svg
+            {/* <svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -224,10 +274,13 @@ export default function Home() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
-            <span className={`${assistant.className}`}>info@retrovrs.com</span>
+            </svg> */}
+            <span
+              className={`${assistant.className} text-fuchsia-300 text-xl md:text-2xl mb-5`}>
+              info@retrovrs.com
+            </span>
           </p>
-          <div className=" mt-5 text-indigo-200 hover:cursor-pointer hover:text-indigo-300 flex gap-10 ">
+          <div className=" mt-5 text-fuchsia-300 hover:cursor-pointer hover:text-fuchsia-400 flex gap-10 ">
             <a
               href="https://www.linkedin.com/company/retrovrs-holdings/"
               target="_blank">
@@ -248,7 +301,7 @@ export default function Home() {
             <a
               href="https://www.instagram.com/retro_vrs"
               target="_blank"
-              className="text-indigo-200 hover:text-indigo-300 transition-colors">
+              className="text-fuchsia-300 hover:text-fuchsia-400 transition-colors">
               <svg
                 width="24"
                 height="24"
