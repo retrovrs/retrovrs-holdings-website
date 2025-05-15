@@ -124,12 +124,12 @@ export default function Home() {
             />
           </aside>
           <p
-            className={`${assistant.className} text-md md:text-lg mt-2 text-center tracking-wide opacity-90 w-4/5 md:w-[55%]`}>
-            A B2C resale marketplace for luxury goods, where each item is
-            authenticated before posting and has its own PBT (Physically Backed
-            Token). Built on the Polygon blockchain network, with built-in
-            lifetime royalties when you re-sell your item on the platform in the
-            future. Now in curated beta, accepting bags and watches.
+            className={`${assistant.className} text-lg mt-2 text-center tracking-wide opacity-90 w-4/5 md:w-[55%]`}>
+            A B2C resale marketplace for pre-authenticated luxury goods, where
+            each item has its own PBT (Physically Backed Token). Built on the
+            Polygon blockchain network, with built-in lifetime royalties when
+            you re-sell your item on the platform in the future. Now in curated
+            beta, accepting bags and watches.
           </p>
           <div className="flex gap-x-12">
             <button
@@ -169,7 +169,7 @@ export default function Home() {
                 />
               </div>
               <p
-                className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
+                className={`${assistant.className} text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
                 A B2B SaaS creating Digital Provenance Passports (DPvP) with
                 built in royalty attribution for existing marketplaces, brands,
                 and boutiques that sell pre-owned luxury assets. Each asset is
@@ -201,7 +201,7 @@ export default function Home() {
                 />
               </div>
               <p
-                className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
+                className={`${assistant.className} text-lg tracking-wide opacity-90 w-4/5 md:w-3/5`}>
                 A B2C and B2B authentication service utilizing computer vision
                 AI, machine learning, deep learning, and blockchain to verify,
                 twin, and tokenize luxury assets, offering Digital Provenance
@@ -231,7 +231,7 @@ export default function Home() {
             </span>
           </h2>
           <p
-            className={`${assistant.className} text-md md:text-lg tracking-wide opacity-90 w-4/5 md:w-3/5 text-center`}>
+            className={`${assistant.className} text-lg tracking-wide opacity-90 w-4/5 md:w-3/5 text-center`}>
             With extensive backgrounds in luxury resale, Web3 technology and
             finance, our team has held key positions at prestigious companies
             such as The RealReal, Vestiaire Collective, Saks Fifth Avenue,
