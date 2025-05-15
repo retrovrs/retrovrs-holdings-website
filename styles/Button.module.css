@@ -1,18 +1,19 @@
 .glowButton {
-  box-shadow: 0 0 5px #6598f683, 0 0 10px #6597f6, 0 0 20px #c587ff;
+  box-shadow: 0 0 5px rgba(217, 70, 239, 0.3), 0 0 10px rgba(217, 70, 239, 0.3),
+    0 0 20px rgba(192, 38, 211, 0.3);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 5px rgba(101, 151, 246, 0.5),
-      /* #6597f6 with 50% opacity */ 0 0 10px rgba(101, 151, 246, 0.5),
-      /* #6597f6 with 50% opacity */ 0 0 20px rgba(197, 135, 255, 0.5); /* #c587ff with 50% opacity */
+    box-shadow: 0 0 5px rgba(217, 70, 239, 0.3),
+      /* fuchsia-400 with 30% opacity */ 0 0 10px rgba(217, 70, 239, 0.3),
+      /* fuchsia-400 with 30% opacity */ 0 0 20px rgba(192, 38, 211, 0.3); /* fuchsia-600 with 30% opacity */
   }
   50% {
-    box-shadow: 0 0 10px rgba(101, 151, 246, 0.5),
-      /* #6597f6 with 50% opacity */ 0 0 20px rgba(101, 151, 246, 0.5),
-      /* #6597f6 with 50% opacity */ 0 0 30px rgba(197, 135, 255, 0.5); /* #c587ff with 50% opacity */
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.3),
+      /* fuchsia-400 with 30% opacity */ 0 0 20px rgba(217, 70, 239, 0.3),
+      /* fuchsia-400 with 30% opacity */ 0 0 30px rgba(192, 38, 211, 0.3); /* fuchsia-600 with 30% opacity */
   }
 }

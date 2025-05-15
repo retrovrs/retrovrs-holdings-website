@@ -120,7 +120,7 @@ export default function Home() {
           </p>
           <div className="flex gap-x-12">
             <button
-              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-200 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
+              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-100 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
               <a href="https://retrovrs.com" target="_blank">
                 Explore RETRO//VRS
               </a>
@@ -228,7 +228,7 @@ export default function Home() {
           </p>
           <div className="flex gap-x-12">
             <button
-              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-200 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
+              className={`${bebasNeue.className}  hover:cursor-pointer hover:bg-fuchsia-950/50 relative border text-fuchsia-100 border-fuchsia-400 text-xl md:text-2xl flex items-center justify-center tracking-wider bg-black px-4 pt-2 pb-1 rounded-md mt-16 ${styles.glowButton} animate-shadowChange`}>
               <a href="https://company.retrovrs.com/team" target="_blank">
                 Meet the team
               </a>
