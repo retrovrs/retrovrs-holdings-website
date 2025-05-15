@@ -41,12 +41,25 @@ function FadeInElement({ children, delay = 0 }: FadeInElementProps) {
 }
 
 function Header() {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <header className="relative flex flex-col justify-center items-center w-full h-[600px] md:h-[800px]">
       <div className="relative w-[100vw] h-[580px] md:h-[780px] left-[calc(-50vw+50%)] right-[calc(-50vw+50%)]">
-        <FadeInElement>
-          <div className="absolute inset-0 bg-[url('/images/banner2.png')] bg-cover bg-center bg-no-repeat opacity-50 z-0"></div>
-        </FadeInElement>
+        <div
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            isImageLoaded ? 'opacity-50' : 'opacity-0'
+          }`}>
+          <Image
+            src="/images/banner2.png"
+            alt="Banner background"
+            fill
+            priority
+            quality={100}
+            className="object-cover object-center"
+            onLoad={() => setIsImageLoaded(true)}
+          />
+        </div>
       </div>
       <h1 className="z-10 self-center items-center justify-center flex flex-col relative bottom-84 md:bottom-84">
         <FadeInElement delay={400}>
